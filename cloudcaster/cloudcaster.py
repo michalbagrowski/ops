@@ -104,6 +104,8 @@ awsec2 = boto.ec2.connect_to_region(
 awselb = boto.ec2.elb.connect_to_region(
     conf['aws']['region'], aws_access_key_id=aws_key, aws_secret_access_key=aws_secret)
 awsiam = boto.connect_iam()
+awsiam = boto.iam.connect_to_region(conf['aws']['region'])
+
 awsasg = boto.ec2.autoscale.connect_to_region(
     conf['aws']['region'], aws_access_key_id=aws_key, aws_secret_access_key=aws_secret)
 
